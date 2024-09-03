@@ -424,12 +424,12 @@ jobs:
           path: ./*
           key: ${{ github.sha }}-${{ github.run_number }}
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: next-swc-binaries
           path: packages/next-swc/native
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: wasm-binaries
           path: packages/next-swc/crates/wasm
@@ -478,7 +478,7 @@ jobs:
         with:
           fetch-depth: 25
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: next-swc-binaries
           path: packages/next-swc/native
@@ -499,7 +499,7 @@ jobs:
       DATADOG_API_KEY: ${{ secrets.DATA_DOG_API_KEY }}
     steps:
       - name: Collect bytesize metrics
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: turbopack-bytesize
           path: turbopack-bin-size
